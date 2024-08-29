@@ -1,5 +1,9 @@
 import CabinCard from '../_components/CabinCard';
-import { CabinPageProps } from '../_models/cabin';
+import { Cabin } from '../_models/cabin';
+
+ interface CabinPageProps {
+  cabins: Cabin[];
+}
 
 export const metadata = {
   title: 'Cabins',
