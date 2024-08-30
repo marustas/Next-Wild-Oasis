@@ -1,15 +1,14 @@
 import CabinCard from '../_components/CabinCard';
+import { getCabins } from '@/app/_lib/data-service';
 import { Cabin } from '../_models/cabin';
-
-interface CabinPageProps {
-  cabins: Cabin[];
-}
 
 export const metadata = {
   title: 'Cabins',
 };
 
-export default function Page({ cabins = [] }: CabinPageProps) {
+export default async function Page() {
+  const cabins: Cabin[] = await getCabins();
+
   return (
     <div>
       <h1 className="text-4xl font-medium text-accent-500">
@@ -24,7 +23,7 @@ export default function Page({ cabins = [] }: CabinPageProps) {
         Welcome to paradise.
       </p>
       {cabins.length > 0 && (
-        <div className="grdi md: grid-cols-2 gap-8 sm:grid-cols-1 lg:gap-12 xl:gap-14">
+        <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:gap-12 xl:gap-14">
           {cabins.map((cabin) => (
             <CabinCard cabin={cabin} key={cabin.id} />
           ))}
