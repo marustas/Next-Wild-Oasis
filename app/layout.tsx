@@ -13,13 +13,19 @@ export const metadata = {
     'Luxurious cabin hotel, located in the heart of the Italian Dolomites surrounded by beautiful mountains and dark forests',
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <body className={`${josefin.className} antialiased bg-primary-950 text-primary-100 min-h-screen flex flex-col`}>
+      <body
+        className={`${josefin.className} flex min-h-screen flex-col bg-primary-950 text-primary-100 antialiased`}
+      >
         <Header />
-        <div className="flex-1 px-8 py-12 grid">
-          <main className="max-w-7xl mx-auto w-full">{children}</main>
+        <div className="grid flex-1 px-8 py-12">
+          <main className="mx-auto w-full max-w-7xl">{children}</main>
         </div>
       </body>
     </html>

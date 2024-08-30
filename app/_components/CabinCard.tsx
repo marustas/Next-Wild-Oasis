@@ -1,4 +1,4 @@
-import { Cabin } from "../_models/cabin";
+import { Cabin } from '../_models/cabin';
 
 interface CabinCardProps {
   cabin: Cabin;
