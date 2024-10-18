@@ -19,9 +19,7 @@ export default function CabinCard({ cabin }: CabinCardProps) {
       </div>
       <div className="flex-grow">
         <div className="bg-primary-950 px-7 pb-4 pt-5">
-          <h3 className="mb-3 text-2xl font-semibold text-accent-500">
-            Cabin {name}
-          </h3>
+          <h3 className="mb-3 text-2xl font-semibold text-accent-500">Cabin {name}</h3>
           <div className="mb-2 flex items-center gap-3">
             <p className="text-lg text-primary-200">
               {' '}
@@ -31,12 +29,8 @@ export default function CabinCard({ cabin }: CabinCardProps) {
           <p className="flex items-baseline justify-end gap-3">
             {discount > 0 ? (
               <>
-                <span className="text-3xl font-[350]">
-                  ${regularPrice - discount}
-                </span>
-                <span className="font-semibold text-primary-600 line-through">
-                  ${regularPrice}
-                </span>
+                <span className="text-3xl font-[350]">${regularPrice - discount}</span>
+                <span className="font-semibold text-primary-600 line-through">${regularPrice}</span>
               </>
             ) : (
               <span className="text-3xl font-[350]">${regularPrice}</span>
