@@ -38,6 +38,14 @@ export default function CabinCard({ cabin }: CabinCardProps) {
             <span className="text-primary-200">/ night</span>
           </p>
         </div>
+        <div className="bg-primary-950 border-t border-t-primary-800 text-right ">
+          <a
+            className="border-l border-primary-800 inline-block px-6 py-4 hover:bg-accent-600 hover:text-primary-900 transition-all"
+            href={`/cabins/${id}`}
+          >
+            Details & reservations &rarr;
+          </a>
+        </div>
       </div>
     </div>
   );

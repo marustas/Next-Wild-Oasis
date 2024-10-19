@@ -8,9 +8,7 @@ export default function Page() {
 
   return (
     <div>
-      <h2 className="mb-7 text-2xl font-semibold text-accent-400">
-        Your reservations
-      </h2>
+      <h2 className="mb-7 text-2xl font-semibold text-accent-400">Your reservations</h2>
 
       {bookings.length === 0 ? (
         <p className="text-lg">
