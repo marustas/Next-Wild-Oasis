@@ -14,7 +14,11 @@ export const metadata = {
     'Luxurious cabin hotel, located in the heart of the Italian Dolomites surrounded by beautiful mountains and dark forests',
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body

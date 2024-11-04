@@ -1,7 +1,11 @@
 import React from 'react';
 import SideNavigation from '../_components/SideNavigation';
 
-export default function AccountLayout({ children }: { children: React.ReactNode }) {
+export default function AccountLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <div className="grid h-full grid-cols-[16rem_1fr] gap-12">
       <SideNavigation />

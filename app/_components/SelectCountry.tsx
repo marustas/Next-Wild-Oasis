@@ -1,9 +1,9 @@
-interface SelectCoutnryProps {
+type SelectCoutnryProps = {
   defaultCountry: any;
   name: string;
   id: string;
   className: string;
-}
+};
 
 export default async function SelectCountry({
   defaultCountry,
@@ -11,6 +11,7 @@ export default async function SelectCountry({
   id,
   className,
 }: SelectCoutnryProps) {
+  console.log(defaultCountry, name, id, className);
   //   const countries = await getCountries();
   //   const flag =
   //     countries.find((country) => country.name === defaultCountry)?.flag ?? '';
