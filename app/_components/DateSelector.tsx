@@ -4,6 +4,7 @@ import { isWithinInterval } from 'date-fns';
 import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 import { Cabin } from '../_models/cabin';
+import { useReservationContext } from './ReservationContext';
 
 export interface CustomDate extends Date {
   from: Date;
@@ -39,14 +40,15 @@ function DateSelector({
   const { discount, regularPrice } = cabin;
   const numNights = 23;
   const totalPrice = numNights * (regularPrice - discount);
-  const range = { from: null, to: null };
 
   const { minBookingLength, maxBookingLength } = settings;
 
+  const { range, setRange, resetRange } = useReservationContext();
+
   return (
-    <div className="flex flex-col justify-between">
+    <div className="flex w-[100%] flex-col justify-between">
       <DayPicker
-        className="rdp pt-12"
+        className="rdp place-self-center pt-12"
         mode="range"
         min={minBookingLength + 1}
         max={maxBookingLength}
@@ -55,6 +57,8 @@ function DateSelector({
         toYear={new Date().getFullYear() + 5}
         captionLayout="dropdown"
         numberOfMonths={2}
+        onSelect={setRange}
+        selected={range}
       />
 
       <div className="flex h-[72px] items-center justify-between bg-accent-500 px-8 text-primary-800">
@@ -88,7 +92,9 @@ function DateSelector({
         {range.from || range.to ? (
           <button
             className="border border-primary-800 px-4 py-2 text-sm font-semibold"
-            // onClick={() => {resetRange()}}
+            onClick={() => {
+              resetRange();
+            }}
           >
             Clear
           </button>

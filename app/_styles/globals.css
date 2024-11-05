@@ -28,14 +28,8 @@
 }
 
 .rdp {
-  --rdp-cell-size: 12px !important;
-  --rdp-accent-color: theme('colors.accent.500') !important;
-  --rdp-background-color: theme('colors.accent.600') !important;
+  --rdp-cell-size: 32px !important;
+  --rdp-accent-color: theme('colors.accent.600') !important;
+  --rdp-accent-background-color: theme('colors.accent.600') !important;
   margin: 0 !important;
-}
-
-.rdp .rdp-months {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
 }
