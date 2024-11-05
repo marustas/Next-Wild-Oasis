@@ -52,7 +52,6 @@ function mapCapacityToText(capacity: Capacity): string {
       return `6 and more guests`;
     case Capacity.medium:
       return `3 - 6 guests`;
-
     case Capacity.small:
       return `3 and less guests`;
   }
